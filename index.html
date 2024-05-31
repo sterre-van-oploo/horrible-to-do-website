@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(not so) Minimalistic To-Do List</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Comic+Neue:300,300italic,regular,italic,700,700italic" rel="stylesheet" />
+</head>
+<body>
+    <!-- Left image -->
+    <img src="./assets/banner-one.png" alt="Left Image" class="banner-one">
+    
+    <!-- left image -->
+    <img src="./assets/banner-two.png" alt="left Image" class="banner-two">
+
+    <img src="./assets/BANNER-RIGHT.png" alt="Right Image" class="banner-right">
+
+    <div class="ugly-border"></div>
+
+    <div class="stripes"></div> <!-- Add a separate div for the stripes -->
+        <header class="header">
+            <h1>To-Do List</h1>
+        </header>
+
+    <!-- GIF in the bottom left corner -->
+    <img src="./assets/sparkle-sparkles.gif" alt="GIF" class="bottom-left-gif">
+    <img src="./assets/sparkle-sparkles.gif" alt="GIF" class="bottom-left-gif-1">
+    <img src="./assets/sparkle-sparkles.gif" alt="GIF" class="bottom-left-gif-2">
+
+    <main>
+        <div class="todo-container">
+            <input type="text" id="new-todo" placeholder="Add a new task...">
+            <button id="add-todo">Add</button>
+            <ul id="todo-list"></ul>
+        </div>
+    </main>
+    <div id="congrats-popup" class="hidden">
+        <div class="popup-content">
+            <h1>Congratulations! You've completed all your tasks!</h1>
+            <button id="close-popup">Wait 5 seconds</button>
+        </div>
+        <div class="background-image"></div> <!-- Background image overlay -->
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

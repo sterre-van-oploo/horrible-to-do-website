@@ -1,0 +1,282 @@
+@import url(https://fonts.googleapis.com/css?family=Comic+Neue:300,300italic,regular,italic,700,700italic);
+
+body {
+    font-family: 'Comic Neue';
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0800ff, #00ff04, #ffff00, #ff0000, #b300ff, #00fbff);
+    background-size: 800% 800%;
+    animation: gradientAnimation 3s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 25%; }
+    25% { background-position: 26% 50%; }
+    50% { background-position: 51% 75%; }
+    75% { background-position: 76% 80%; }
+    100% { background-position: 81% 100%; }
+}
+
+.hidden {
+    display: none;
+}
+
+.bottom-left-gif {
+    position: fixed;
+    bottom: 20px;
+    left: 200px;
+    width: 200px; /* Adjust the size as needed */
+    height: auto;
+    z-index: 10; /* Ensure it is above other elements */
+}
+
+.bottom-left-gif-1 {
+    position: fixed;
+    bottom: 10px;
+    left: 450px;
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
+    z-index: 10; /* Ensure it is above other elements */
+}
+
+.bottom-left-gif-2 {
+    position: fixed;
+    top: 10px;
+    right: 250px;
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
+    z-index: 10; /* Ensure it is above other elements */
+}
+
+/* Overlay blue polka dots */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#0000ff 10%, transparent 20%);
+    background-size: 30px 30px; /* Adjust size of polka dots */
+    z-index: -2;
+}
+
+/* Define the purple stripes with inner gradient */
+.stripes {
+    background-image: linear-gradient(45deg, #ff0000, #ff0000, #ff8800, #ffea00, #3cff00, #00ffc3, #0008ff, #b700ff, #ff0099);
+    background-size: 1400px 200px; /* Adjust the size of the stripes */
+    position: absolute; /* Position the stripes relative to the body */
+    z-index: -1; /* Ensure the stripes are behind other content */
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    border-style: dotted;
+    border-color: #f0f0f0;
+    border-width: 10px;
+}
+
+.stripes {
+    position: absolute;
+    height: 80px;
+    top: 135px;
+}
+
+.todo-container {
+    background: rgb(255, 0, 0);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 1rem;
+    font-family: 'Comic Neue';
+    border-style: dashed;
+    border-color: rgb(119, 58, 189);
+    border-width: 5px;
+}
+
+input[type="text"] {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #2600ff;
+    border-radius: 4px;
+}
+
+button {
+    padding: 1rem;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 1rem;
+    border-bottom: 1px solid #ff0000;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.5s ease-out, height 0.5s ease-out, margin 0.5s ease-out, padding 0.5s ease-out;
+    overflow: hidden;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+li label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+li input[type="checkbox"] {
+    margin-right: 1rem;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    background-color: #6200ea;
+    color: white;
+    border-style: dotted;
+    border-color: #f0f0f0;
+    border-width: 10px;
+}
+
+/* Adjust the congrats-popup styles */
+/* styles.css */
+
+/* Adjust the congrats-popup styles */
+#congrats-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: black; /* Text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top of other content */
+    pointer-events: none; /* Disable mouse events */
+}
+
+/* Hide the pop-up by default */
+#congrats-popup {
+    display: none;
+}
+
+/* Adjust the congrats-popup styles */
+#congrats-popup.active {
+    display: flex;
+    /* Other styles remain the same */
+}
+
+.popup-content {
+    text-align: center; /* Center-align the content */
+    z-index: 1; /* Ensure it's on top of the background image */
+    font-family: 'Comic Neue';
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.kym-cdn.com/entries/icons/original/000/042/966/cover12.jpg'); /* Add the URL of your background image */
+    background-size: cover; /* Cover the entire area of the pop-up */
+    opacity: 0.9; /* Adjust the opacity of the background image */
+}
+
+#congrats-popup.active {
+    pointer-events: auto; /* Enable mouse events */
+}
+
+#congrats-popup.active {
+    opacity: 1; /* Show the pop-up */
+    pointer-events: auto; /* Enable mouse events */
+}
+
+.popup-content {
+    text-align: center; /* Center-align the content */
+}
+
+.popup-content p {
+    margin-bottom: 1rem; /* Add some space below the text */
+}
+
+.popup-content button {
+    margin-top: 1rem; /* Add some space above the button */
+}
+
+.hidden {
+    display: none;
+}
+
+.banner-one {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 600px;
+    /* Add additional styling properties as needed */
+}
+
+.banner-two {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 280px;
+    width: 200px;
+    /* Add additional styling properties as needed */
+}
+
+.banner-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 900px;
+    width: 200px;
+    /* Add additional styling properties as needed */
+}
+
+.ugly-border{
+    position: absolute;
+    width: 900px;
+    height: 800px;
+    top: 30px;
+    border: black;
+    border-style: solid;
+    border-width: 5px;
+    z-index: -1;
+}
+
+.todo-container li:nth-child(even) {
+    background-color: #ffea00; /* Light gray background for even-indexed tasks */
+}
+
+.todo-container li:nth-child(odd) {
+    background-color: #00ff00; /* Lighter gray background for odd-indexed tasks */
+}
